@@ -118,13 +118,13 @@ const testimonials = [
 
 const StatItem = ({ s, i }) => {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
+  const inView = useInView(ref, { once: true, margin: '-80px' })
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: i * 0.1 }}
+      transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="text-center"
     >
       <div className="font-serif text-4xl md:text-5xl text-gold mb-2">{s.number}</div>
@@ -141,7 +141,7 @@ const ServiceCard = ({ s, i }) => {
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: i * 0.15 }}
+      transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="card-hover p-8 border border-[#2a1a1a] bg-[#150a0a] cursor-default"
     >
       <div className="w-12 h-12 border border-gold/30 flex items-center justify-center mb-6">
@@ -155,13 +155,13 @@ const ServiceCard = ({ s, i }) => {
 
 const TestimonialCard = ({ t, i }) => {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
+  const inView = useInView(ref, { once: true, margin: '-80px' })
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: i * 0.2 }}
+      transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="p-8 border border-[#2a1a1a] bg-[#150a0a] relative"
     >
       <div className="absolute top-6 right-6 font-serif text-5xl text-gold/10">"</div>
@@ -252,7 +252,12 @@ export default function App() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a] via-[#0a0505] to-[#0a0505]" />
+        <img
+          src="https://images.unsplash.com/photo-1674826272758-e5c26d177cf2?w=1920&q=80&auto=format&fit=crop"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a] via-[#0a0505]/80 to-[#0a0505]" />
         <div
           className="absolute inset-0"
           style={{
@@ -274,10 +279,21 @@ export default function App() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#f5f0e8] mb-6 leading-none"
+            className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-none"
           >
-            Ferreira <span className="gold-shimmer">&</span>
-            <br />Associados
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #c9a84c, #f5d78e, #c9a84c)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundSize: '200% 200%',
+                animation: 'shimmer 3s ease infinite',
+              }}
+            >
+              Ferreira &amp;
+            </span>
+            <br />
+            <span className="text-[#f5f0e8]">Associados</span>
           </motion.h1>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -363,7 +379,7 @@ export default function App() {
                 Janeiro e Belo Horizonte.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-4 mt-8 mb-8">
               <div className="flex items-center gap-2 text-gold text-sm font-sans">
                 <FaAward size={14} /> OAB Certificado
               </div>
@@ -374,9 +390,14 @@ export default function App() {
                 <FaStar size={14} /> Top 10 SP 2024
               </div>
             </div>
+            <img
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80&auto=format&fit=crop"
+              alt="escritório"
+              className="w-full h-64 object-cover rounded-lg opacity-80"
+            />
           </div>
           <div className="relative">
-            <div className="aspect-square bg-[#0a0505] border border-[#2a1a1a] flex items-center justify-center relative overflow-hidden">
+            <div className="bg-[#0a0505] border border-[#2a1a1a] relative overflow-hidden">
               <div
                 className="absolute inset-0"
                 style={{
@@ -384,17 +405,43 @@ export default function App() {
                     'radial-gradient(circle at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%)',
                 }}
               />
-              <div className="text-center p-12 relative z-10">
-                <div className="font-serif text-8xl text-gold opacity-20 mb-4">§</div>
-                <div className="font-serif text-2xl text-[#f5f0e8]">Dr. Ricardo Ferreira</div>
-                <div className="text-gold text-xs tracking-widest uppercase mt-2 font-sans">
-                  Sócio Fundador · OAB/SP 234.891
+              <div className="relative z-10 p-8">
+                <div className="text-center mb-8">
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0dc405e5be4c?w=400&q=80&auto=format&fit=crop"
+                    alt="Dr. Ricardo Ferreira"
+                    className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-2 border-gold/30"
+                  />
+                  <div className="font-serif text-2xl text-[#f5f0e8]">Dr. Ricardo Ferreira</div>
+                  <div className="text-gold text-xs tracking-widest uppercase mt-2 font-sans">
+                    Sócio Fundador · OAB/SP 234.891
+                  </div>
+                  <div className="w-12 h-px bg-gold mx-auto my-4" />
+                  <p className="text-gray-500 text-sm font-light leading-relaxed font-sans">
+                    Mestre em Direito Empresarial pela USP. 15 anos de experiência em grandes transações
+                    corporativas.
+                  </p>
                 </div>
-                <div className="w-12 h-px bg-gold mx-auto my-4" />
-                <p className="text-gray-500 text-sm font-light leading-relaxed font-sans">
-                  Mestre em Direito Empresarial pela USP. 15 anos de experiência em grandes transações
-                  corporativas.
-                </p>
+                <div className="grid grid-cols-2 gap-4 border-t border-[#2a1a1a] pt-6">
+                  <div className="text-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop"
+                      alt="Dra. Ana Beatriz"
+                      className="w-16 h-16 object-cover rounded-full mx-auto mb-2 border border-gold/20"
+                    />
+                    <div className="text-[#f5f0e8] text-xs font-sans">Dra. Ana Beatriz</div>
+                    <div className="text-gold text-[10px] font-sans mt-1">Direito Civil</div>
+                  </div>
+                  <div className="text-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop"
+                      alt="Dr. Marcus Oliveira"
+                      className="w-16 h-16 object-cover rounded-full mx-auto mb-2 border border-gold/20"
+                    />
+                    <div className="text-[#f5f0e8] text-xs font-sans">Dr. Marcus Oliveira</div>
+                    <div className="text-gold text-[10px] font-sans mt-1">Direito Empresarial</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-gold/20" />
