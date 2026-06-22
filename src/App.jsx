@@ -206,8 +206,11 @@ export default function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="font-serif text-xl text-[#f5f0e8]">
-            F<span className="text-gold">&</span>A
+          <a href="#" className="flex items-center gap-2.5 font-serif text-xl text-[#f5f0e8]">
+            <svg viewBox="0 0 32 32" className="w-6 h-6" fill="none" stroke="#c9a84c" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 5v22" /><path d="M7 9h18" /><path d="M7 9l-4 7h8z" /><path d="M25 9l-4 7h8z" /><path d="M11 27h10" />
+            </svg>
+            <span>F<span className="text-gold">&</span>A</span>
           </a>
           <div className="hidden md:flex items-center gap-8">
             <NavLink href="#servicos">Serviços</NavLink>
