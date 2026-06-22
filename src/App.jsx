@@ -252,12 +252,14 @@ export default function App() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1674826272758-e5c26d177cf2?w=1920&q=80&auto=format&fit=crop"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a] via-[#0a0505]/80 to-[#0a0505]" />
+        <video
+          autoPlay loop muted playsInline
+          poster="https://images.unsplash.com/photo-1674826272758-e5c26d177cf2?w=1920&q=80&auto=format&fit=crop"
+          className="absolute inset-0 w-full h-full object-cover opacity-25"
+        >
+          <source src="https://assets.mixkit.co/videos/41541/41541-1080.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a]/90 via-[#0a0505]/85 to-[#0a0505]" />
         <div
           className="absolute inset-0"
           style={{
