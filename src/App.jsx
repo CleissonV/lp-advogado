@@ -255,9 +255,9 @@ export default function App() {
         <video
           autoPlay loop muted playsInline
           poster="https://images.unsplash.com/photo-1674826272758-e5c26d177cf2?w=1920&q=80&auto=format&fit=crop"
-          className="absolute inset-0 w-full h-full object-cover opacity-25"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
-          <source src="https://assets.mixkit.co/videos/41541/41541-1080.mp4" type="video/mp4" />
+          <source src="/hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a]/90 via-[#0a0505]/85 to-[#0a0505]" />
         <div
