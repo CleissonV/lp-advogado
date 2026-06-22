@@ -257,7 +257,7 @@ export default function App() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <video
           autoPlay loop muted playsInline
-          poster="https://images.unsplash.com/photo-1674826272758-e5c26d177cf2?w=1920&q=80&auto=format&fit=crop"
+          poster="https://images.unsplash.com/photo-1505663912202-ac22d4cb3707?w=1920&q=80&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
           <source src="/hero.mp4" type="video/mp4" />
@@ -413,7 +413,7 @@ export default function App() {
               <div className="relative z-10 p-8">
                 <div className="text-center mb-8">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0dc405e5be4c?w=400&q=80&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop"
                     alt="Dr. Ricardo Ferreira"
                     className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-2 border-gold/30"
                   />
